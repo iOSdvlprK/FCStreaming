@@ -20,6 +20,7 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func buttonDidTap(_ sender: Any) {
+        self.view.window?.rootViewController = self.storyboard?.instantiateViewController(withIdentifier: "tabbar")
     }
 }
 
