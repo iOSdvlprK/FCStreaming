@@ -8,6 +8,10 @@
 import UIKit
 
 class HomeVideoCell: UITableViewCell {
+    static let identifier: String = "HomeVideoCell"
+    static let height: CGFloat = 321
+    
+    @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet weak var channelImageView: UIImageView!
     @IBOutlet weak var hotImageView: UIImageView!
@@ -18,7 +22,10 @@ class HomeVideoCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        self.containerView.layer.cornerRadius = 10
+        self.containerView.layer.borderColor = UIColor(resource: .strokeLight).cgColor
+        self.containerView.layer.borderWidth = 1
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

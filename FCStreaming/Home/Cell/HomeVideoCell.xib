@@ -144,6 +144,7 @@
                 <outlet property="channelImageView" destination="ATm-oJ-HXA" id="Vfb-g3-ib0"/>
                 <outlet property="channelSubtitleLabel" destination="hOh-Lq-Uv5" id="t4h-a1-HLj"/>
                 <outlet property="channelTitleLabel" destination="Hvy-ga-TC4" id="lD4-AX-aWV"/>
+                <outlet property="containerView" destination="uHt-4b-iod" id="aXr-Ln-Nux"/>
                 <outlet property="hotImageView" destination="dwQ-wj-tCv" id="2CQ-ih-bdV"/>
                 <outlet property="subtitleLabel" destination="MOn-yo-Dzf" id="Pic-YW-Mdb"/>
                 <outlet property="thumbnailImageView" destination="cP0-uR-OeI" id="l9a-QP-qgS"/>
