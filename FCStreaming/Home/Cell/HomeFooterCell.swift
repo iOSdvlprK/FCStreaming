@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeFooterCell: UICollectionReusableView {
+class HomeFooterCell: UITableViewCell {
     static let height: CGFloat = 80
     static let identifier: String = "HomeFooterCell"
 

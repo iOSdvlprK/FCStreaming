@@ -120,12 +120,11 @@
             <viewLayoutGuide key="safeArea" id="33M-bb-l4t"/>
             <color key="backgroundColor" name="bg"/>
             <connections>
-                <outlet property="contentLeadingConstraint" destination="gqJ-nt-adR" id="eFe-3E-83o"/>
                 <outlet property="descriptionLabel" destination="WSz-dE-45C" id="oXc-IT-HEl"/>
                 <outlet property="playTimeBGView" destination="h05-kE-abN" id="2oQ-kK-0Dl"/>
                 <outlet property="playTimeLabel" destination="lyG-gU-8aV" id="pVi-Ra-HtX"/>
                 <outlet property="rankLabel" destination="FbJ-IO-OEb" id="El1-YD-h70"/>
-                <outlet property="thumbnailContainerView" destination="h3p-cd-Q3l" id="rYg-hH-rTe"/>
+                <outlet property="thumbnailContainerView" destination="h3p-cd-Q3l" id="WRx-kE-4M9"/>
                 <outlet property="thumbnailImageView" destination="Ie9-SD-FK3" id="fhW-M8-hvg"/>
                 <outlet property="titleLabel" destination="L5s-AC-6Q5" id="Lgv-WQ-hZe"/>
             </connections>

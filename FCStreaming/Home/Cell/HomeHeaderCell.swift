@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeHeaderCell: UICollectionReusableView {
+class HomeHeaderCell: UITableViewCell {
     static let height: CGFloat = 66
     static let identifier: String = "HomeHeaderCell"
 
