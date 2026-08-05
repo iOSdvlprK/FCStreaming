@@ -23,10 +23,10 @@ class HomeViewController: UIViewController {
     }
     
     private func setupTableView() {
-        self.tableView.register(UINib(nibName: HomeHeaderCell.identifier, bundle: .main), forCellReuseIdentifier: HomeHeaderCell.identifier)
+        self.tableView.register(UINib(nibName: HomeHeaderView.identifier, bundle: .main), forCellReuseIdentifier: HomeHeaderView.identifier)
         self.tableView.register(UINib(nibName: HomeVideoCell.identifier, bundle: nil), forCellReuseIdentifier: HomeVideoCell.identifier)
         self.tableView.register(UINib(nibName: HomeRecommendContainerCell.identifier, bundle: .main), forCellReuseIdentifier: HomeRecommendContainerCell.identifier)
-        self.tableView.register(UINib(nibName: HomeFooterCell.identifier, bundle: .main), forCellReuseIdentifier: HomeFooterCell.identifier)
+        self.tableView.register(UINib(nibName: HomeFooterView.identifier, bundle: .main), forCellReuseIdentifier: HomeFooterView.identifier)
         self.tableView.register(UINib(nibName: HomeRankingContainerCell.identifier, bundle: nil), forCellReuseIdentifier: HomeRankingContainerCell.identifier)
         self.tableView.register(UINib(nibName: HomeRecentWatchContainerCell.identifier, bundle: .main), forCellReuseIdentifier: HomeRecentWatchContainerCell.identifier)
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "empty")
@@ -73,7 +73,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         }
         switch section {
         case .header:
-            return HomeHeaderCell.height
+            return HomeHeaderView.height
         case .video:
             return HomeVideoCell.height
         case .ranking:
@@ -83,7 +83,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         case .recommend:
             return HomeRecommendContainerCell.height(viewModel: self.homeViewModel.recommendViewModel)
         case .footer:
-            return HomeFooterCell.height
+            return HomeFooterView.height
         }
     }
     
@@ -95,7 +95,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         switch section {
         case .header:
             return tableView.dequeueReusableCell(
-                withIdentifier: HomeHeaderCell.identifier,
+                withIdentifier: HomeHeaderView.identifier,
                 for: indexPath
             )
         case .video:
@@ -150,7 +150,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         case .footer:
             return tableView.dequeueReusableCell(
-                withIdentifier: HomeFooterCell.identifier,
+                withIdentifier: HomeFooterView.identifier,
                 for: indexPath
             )
         }
@@ -167,7 +167,7 @@ extension HomeViewController: HomeRecommendContainerCellDelegate {
     }
 }
 
-extension HomeViewController: HomeRankingContainerCellDeleate {
+extension HomeViewController: HomeRankingContainerCellDelegate {
     func homeRankingContainerCell(_ cell: HomeRankingContainerCell, didSelectItemAt index: Int) {
         print("home ranking did select at \(index)")
     }

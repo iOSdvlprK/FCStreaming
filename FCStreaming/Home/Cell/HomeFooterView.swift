@@ -1,5 +1,5 @@
 //
-//  HomeFooterCell.swift
+//  HomeFooterView.swift
 //  FCStreaming
 //
 //  Created by joe on 7/26/26.
@@ -7,9 +7,9 @@
 
 import UIKit
 
-class HomeFooterCell: UITableViewCell {
+class HomeFooterView: UICollectionReusableView {
     static let height: CGFloat = 80
-    static let identifier: String = "HomeFooterCell"
+    static let identifier: String = "HomeFooterView"
 
     override func awakeFromNib() {
         super.awakeFromNib()

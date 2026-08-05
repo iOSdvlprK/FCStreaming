@@ -4,21 +4,21 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24743"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="KGk-i7-Jjw" customClass="HomeVideoCell" customModule="FCStreaming" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="393" height="321"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="xgS-fO-oKt" customClass="HomeVideoCell" customModule="FCStreaming" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="351" height="301"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="393" height="321"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="NFJ-w9-3KW">
+                <rect key="frame" x="0.0" y="0.0" width="351" height="301"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uHt-4b-iod">
-                        <rect key="frame" x="21" y="0.0" width="351" height="301"/>
+                        <rect key="frame" x="0.0" y="0.0" width="351" height="301"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cP0-uR-OeI">
                                 <rect key="frame" x="0.0" y="0.0" width="351" height="160"/>
@@ -131,27 +131,30 @@
                         </constraints>
                     </view>
                 </subviews>
-                <color key="backgroundColor" name="bg"/>
                 <constraints>
-                    <constraint firstItem="uHt-4b-iod" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="21" id="X2k-eB-b17"/>
-                    <constraint firstAttribute="bottom" secondItem="uHt-4b-iod" secondAttribute="bottom" constant="20" id="gnq-AH-BNW"/>
-                    <constraint firstAttribute="trailing" secondItem="uHt-4b-iod" secondAttribute="trailing" constant="21" id="rr7-dl-3Ht"/>
-                    <constraint firstItem="uHt-4b-iod" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="tFQ-cf-jnZ"/>
+                    <constraint firstItem="uHt-4b-iod" firstAttribute="top" secondItem="NFJ-w9-3KW" secondAttribute="top" id="6X0-0O-oS5"/>
+                    <constraint firstAttribute="bottom" secondItem="uHt-4b-iod" secondAttribute="bottom" id="GWB-4d-V7j"/>
+                    <constraint firstItem="uHt-4b-iod" firstAttribute="leading" secondItem="NFJ-w9-3KW" secondAttribute="leading" id="bLe-MY-2Ex"/>
+                    <constraint firstAttribute="trailing" secondItem="uHt-4b-iod" secondAttribute="trailing" id="bO0-Ju-N95"/>
+                    <constraint firstAttribute="bottom" secondItem="uHt-4b-iod" secondAttribute="bottom" id="bUa-Xv-qbh"/>
+                    <constraint firstItem="uHt-4b-iod" firstAttribute="top" secondItem="NFJ-w9-3KW" secondAttribute="top" id="jf1-u8-HVj"/>
+                    <constraint firstItem="uHt-4b-iod" firstAttribute="leading" secondItem="NFJ-w9-3KW" secondAttribute="leading" id="vo3-Gl-Njm"/>
+                    <constraint firstAttribute="trailing" secondItem="uHt-4b-iod" secondAttribute="trailing" id="yvk-gw-9Dl"/>
                 </constraints>
-            </tableViewCellContentView>
-            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            </collectionViewCellContentView>
+            <size key="customSize" width="393" height="339"/>
             <connections>
-                <outlet property="channelImageView" destination="ATm-oJ-HXA" id="Vfb-g3-ib0"/>
-                <outlet property="channelSubtitleLabel" destination="hOh-Lq-Uv5" id="t4h-a1-HLj"/>
-                <outlet property="channelTitleLabel" destination="Hvy-ga-TC4" id="lD4-AX-aWV"/>
-                <outlet property="containerView" destination="uHt-4b-iod" id="aXr-Ln-Nux"/>
-                <outlet property="hotImageView" destination="dwQ-wj-tCv" id="2CQ-ih-bdV"/>
-                <outlet property="subtitleLabel" destination="MOn-yo-Dzf" id="Pic-YW-Mdb"/>
-                <outlet property="thumbnailImageView" destination="cP0-uR-OeI" id="l9a-QP-qgS"/>
-                <outlet property="titleLabel" destination="mkR-gD-nd7" id="DnM-od-zo0"/>
+                <outlet property="channelImageView" destination="ATm-oJ-HXA" id="T8Q-Ws-URf"/>
+                <outlet property="channelSubtitleLabel" destination="hOh-Lq-Uv5" id="z3I-Hm-p58"/>
+                <outlet property="channelTitleLabel" destination="Hvy-ga-TC4" id="FDu-gj-cjO"/>
+                <outlet property="containerView" destination="uHt-4b-iod" id="gy6-hW-tHW"/>
+                <outlet property="hotImageView" destination="dwQ-wj-tCv" id="uGB-Cp-7UM"/>
+                <outlet property="subtitleLabel" destination="MOn-yo-Dzf" id="Iub-LZ-Tcw"/>
+                <outlet property="thumbnailImageView" destination="cP0-uR-OeI" id="zXK-uL-H9Z"/>
+                <outlet property="titleLabel" destination="mkR-gD-nd7" id="rNr-7j-8se"/>
             </connections>
-            <point key="canvasLocation" x="-31" y="137"/>
-        </tableViewCell>
+            <point key="canvasLocation" x="-13" y="154"/>
+        </collectionViewCell>
     </objects>
     <resources>
         <image name="favorite" width="20" height="20"/>
