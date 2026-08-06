@@ -84,7 +84,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zEj-ZV-cjI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1398" y="1030"/>
+            <point key="canvasLocation" x="1398" y="1068"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="By7-1h-q4P">
@@ -104,9 +104,9 @@
                         </tabBarAppearance>
                     </tabBar>
                     <connections>
+                        <segue destination="sUL-VP-ZOz" kind="relationship" relationship="viewControllers" id="dHg-Yz-HwJ"/>
                         <segue destination="huL-Cb-TmK" kind="relationship" relationship="viewControllers" id="Xou-eZ-IX1"/>
                         <segue destination="p9S-vU-Fo1" kind="relationship" relationship="viewControllers" id="Vx6-5w-qEi"/>
-                        <segue destination="sUL-VP-ZOz" kind="relationship" relationship="viewControllers" id="dHg-Yz-HwJ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C3c-ia-Beb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -131,10 +131,10 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="vY9-JQ-uuI">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="6kn-KA-8OQ">
                                         <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Ajc-OP-0H1">
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="fUL-5H-tli">
                                             <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
@@ -153,12 +153,12 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="tabIcon_home" selectedImage="tabIcon_home_selected" id="qkM-YA-fGv"/>
                     <connections>
-                        <outlet property="collectionView" destination="G3Y-z6-ZLp" id="AB5-Vg-808"/>
+                        <outlet property="collectionView" destination="G3Y-z6-ZLp" id="Rgb-Ek-O9P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bag-DC-23w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1398" y="-219"/>
+            <point key="canvasLocation" x="1398" y="-212"/>
         </scene>
     </scenes>
     <resources>
