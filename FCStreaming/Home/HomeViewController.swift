@@ -23,11 +23,11 @@ class HomeViewController: UIViewController {
     }
     
     private func setupCollectionView() {
-        self.collectionView.register(UINib(nibName: HomeHeaderView.identifier, bundle: nil), forCellWithReuseIdentifier: HomeHeaderView.identifier)
+        self.collectionView.register(UINib(nibName: HomeHeaderView.identifier, bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HomeHeaderView.identifier)
         self.collectionView.register(UINib(nibName: HomeVideoCell.identifier, bundle: nil), forCellWithReuseIdentifier: HomeVideoCell.identifier)
         self.collectionView.register(UINib(nibName: HomeRecommendContainerCell.identifier, bundle: .main), forCellWithReuseIdentifier: HomeRecommendContainerCell.identifier)
-        self.collectionView.register(UINib(nibName: HomeFooterView.identifier, bundle: .main), forCellWithReuseIdentifier: HomeFooterView.identifier)
-        self.collectionView.register(UINib(nibName: HomeRankingHeaderView.identifier, bundle: nil), forCellWithReuseIdentifier: HomeRankingHeaderView.identifier)
+        self.collectionView.register(UINib(nibName: HomeFooterView.identifier, bundle: .main), forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: HomeFooterView.identifier)
+        self.collectionView.register(UINib(nibName: HomeRankingHeaderView.identifier, bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HomeRankingHeaderView.identifier)
         self.collectionView.register(UINib(nibName: HomeRankingContainerCell.identifier, bundle: nil), forCellWithReuseIdentifier: HomeRankingContainerCell.identifier)
         self.collectionView.register(UINib(nibName: HomeRecentWatchContainerCell.identifier, bundle: .main), forCellWithReuseIdentifier: HomeRecentWatchContainerCell.identifier)
         
