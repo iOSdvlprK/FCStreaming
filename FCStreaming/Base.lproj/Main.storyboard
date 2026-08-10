@@ -127,6 +127,7 @@
                                 </state>
                                 <connections>
                                     <action selector="bookmarkDidTap:" destination="p9S-vU-Fo1" eventType="touchUpInside" id="1D6-GK-jVN"/>
+                                    <segue destination="fZr-n0-m42" kind="show" id="Phx-tS-0s9"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f3d-RZ-K33">
@@ -166,6 +167,7 @@
                     <navigationItem key="navigationItem" title="MY" id="YqE-mB-7bK"/>
                     <connections>
                         <outlet property="profileImageView" destination="iUM-Ki-f5B" id="VL1-hM-KRy"/>
+                        <segue destination="xJ4-id-e0w" kind="show" identifier="favorite" id="aD7-ln-V4Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zEj-ZV-cjI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -175,13 +177,13 @@
         <!--좋아요 한 영상-->
         <scene sceneID="xUT-au-qm8">
             <objects>
-                <viewController id="xJ4-id-e0w" sceneMemberID="viewController">
+                <viewController id="xJ4-id-e0w" customClass="FavoriteViewController" customModule="FCStreaming" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iVD-Rd-vrh">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="25S-fR-HYN">
-                                <rect key="frame" x="0.0" y="118" width="393" height="666"/>
+                                <rect key="frame" x="0.0" y="172" width="393" height="563"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -195,6 +197,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="좋아요 한 영상" id="VjL-tc-ubY"/>
+                    <connections>
+                        <outlet property="tableView" destination="25S-fR-HYN" id="vE9-MW-OTP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v25-Mt-rwg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -203,13 +208,13 @@
         <!--찜한 채널-->
         <scene sceneID="6qB-Ru-7gh">
             <objects>
-                <viewController id="fZr-n0-m42" sceneMemberID="viewController">
+                <viewController id="fZr-n0-m42" customClass="BookmarkViewController" customModule="FCStreaming" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="A3x-Ne-Zuy">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="8N0-fZ-jOV">
-                                <rect key="frame" x="0.0" y="118" width="393" height="666"/>
+                                <rect key="frame" x="0.0" y="172" width="393" height="563"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -223,6 +228,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="찜한 채널" id="rRV-gd-ScV"/>
+                    <connections>
+                        <outlet property="tableView" destination="8N0-fZ-jOV" id="FDq-GB-7LS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DxY-pP-nl9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

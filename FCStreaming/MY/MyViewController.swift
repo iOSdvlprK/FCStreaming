@@ -19,7 +19,7 @@ class MyViewController: UIViewController {
     }
 
     @IBAction func bookmarkDidTap(_ sender: Any) {
-        self.performSegue(withIdentifier: "bookmark", sender: nil)
+//        self.performSegue(withIdentifier: "bookmark", sender: nil)
     }
     
     @IBAction func favoriteDidTap(_ sender: Any) {
