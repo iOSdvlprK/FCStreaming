@@ -36,7 +36,7 @@ class HomeRecommendContainerCell: UICollectionViewCell {
         self.tableView.rowHeight = VideoListItemCell.height
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        self.tableView.register(UINib(nibName: "HomeRecommendItemCell", bundle: .main), forCellReuseIdentifier: VideoListItemCell.identifier)
+        self.tableView.register(UINib(nibName: "VideoListItemCell", bundle: .main), forCellReuseIdentifier: VideoListItemCell.identifier)
     }
     
     @IBAction func foldButtonDidTap(_ sender: Any) {
