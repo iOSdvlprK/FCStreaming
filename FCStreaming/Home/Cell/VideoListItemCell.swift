@@ -55,6 +55,7 @@ class VideoListItemCell: UITableViewCell {
         self.thumbnailImageView.image = nil
         self.playTimeLabel.text = nil
         self.rankLabel.text = nil
+        self.contentLeadingConstraint.constant = 0
     }
     
     // MARK: - my
