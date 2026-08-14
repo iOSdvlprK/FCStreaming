@@ -44,6 +44,11 @@ class HomeViewController: UIViewController {
             self?.collectionView.reloadData()
         }
     }
+    
+    private func presentVideoViewController() {
+        let vc = VideoViewController()
+        self.present(vc, animated: true)
+    }
 }
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
@@ -118,6 +123,19 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
                 width: width,
                 height: HomeRecommendContainerCell.height(viewModel: self.homeViewModel.recommendViewModel)
             )
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let section = HomeSection(rawValue: indexPath.section) else {
+            return
+        }
+        
+        switch section {
+        case .header, .footer, .ranking, .recentWatch, .recommend:
+            return
+        case .video:
+            self.presentVideoViewController()
         }
     }
     
@@ -255,7 +273,7 @@ extension HomeViewController: UICollectionViewDataSource {
 
 extension HomeViewController: HomeRecommendContainerCellDelegate {
     func homeRecommendContainerCell(_ cell: HomeRecommendContainerCell, didSelectItemAt index: Int) {
-        print("home recommend cell did select item at \(index)")
+        self.presentVideoViewController()
     }
     
     func homeRecommendContainerCellFoldChanged(_ cell: HomeRecommendContainerCell) {
@@ -266,12 +284,12 @@ extension HomeViewController: HomeRecommendContainerCellDelegate {
 
 extension HomeViewController: HomeRankingContainerCellDelegate {
     func homeRankingContainerCell(_ cell: HomeRankingContainerCell, didSelectItemAt index: Int) {
-        print("home ranking did select at \(index)")
+        self.presentVideoViewController()
     }
 }
 
 extension HomeViewController: HomeRecentWatchContainerCellDelegate {
     func homeRecentWatchContainerCell(_ cell: HomeRecentWatchContainerCell, didSelectItemAt index: Int) {
-        print("home recent watch did select at \(index)")
+        self.presentVideoViewController()
     }
 }
