@@ -54,10 +54,13 @@ extension VideoViewController {
     @IBAction func expandDidTap(_ sender: Any) {
     }
     @IBAction func moreDidTap(_ sender: UIButton) {
+        let moreVC = MoreViewController()
+        self.present(moreVC, animated: false)
     }
     @IBAction func playDidTap(_ sender: Any) {
     }
     @IBAction func closeDidTap(_ sender: Any) {
+        self.dismiss(animated: true)
     }
     @IBAction func rewindDidTap(_ sender: Any) {
     }
