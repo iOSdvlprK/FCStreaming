@@ -15,6 +15,7 @@
                 <outlet property="favoriteButton" destination="jdY-Rd-7du" id="Beb-au-xS1"/>
                 <outlet property="playButton" destination="taa-Gm-l0M" id="ADZ-jd-W6t"/>
                 <outlet property="playCountLabel" destination="yaz-yR-Ryk" id="HtA-X2-7Eu"/>
+                <outlet property="playerView" destination="JCU-ql-oDT" id="Q7S-8D-tPs"/>
                 <outlet property="portraitControlPannel" destination="Dy4-IW-yGY" id="6z2-ka-mGZ"/>
                 <outlet property="recommendTableView" destination="Qda-S2-ecw" id="LPw-fc-IWd"/>
                 <outlet property="tableViewHeightConstraint" destination="4Ek-7t-13U" id="vob-ki-rEm"/>
@@ -31,7 +32,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cCh-Gd-zT6" userLabel="VideoContainerView">
                     <rect key="frame" x="0.0" y="118" width="393" height="221"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JCU-ql-oDT">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JCU-ql-oDT" customClass="PlayerView" customModule="FCStreaming" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="393" height="221"/>
                             <color key="backgroundColor" name="d-text-deep"/>
                         </view>

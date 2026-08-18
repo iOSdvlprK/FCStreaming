@@ -56,10 +56,14 @@ class PlayerView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        self.setupNotification()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        
+        self.setupNotification()
     }
     
     func set(url: URL) {
@@ -138,5 +142,18 @@ extension PlayerView {
         if let playObservation {
             player.removeTimeObserver(playObservation)
         }
+    }
+    
+    private func setupNotification() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(self.didPlayToEnd(_:)),
+            name: .AVPlayerItemDidPlayToEndTime,
+            object: nil
+        )
+    }
+    
+    @objc private func didPlayToEnd(_ notification: Notification) {
+        self.delegate?.playerViewDidFinishToPlay(self)
     }
 }
