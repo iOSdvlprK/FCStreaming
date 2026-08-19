@@ -16,6 +16,7 @@
                 <outlet property="playButton" destination="taa-Gm-l0M" id="ADZ-jd-W6t"/>
                 <outlet property="playCountLabel" destination="yaz-yR-Ryk" id="HtA-X2-7Eu"/>
                 <outlet property="playerView" destination="JCU-ql-oDT" id="Q7S-8D-tPs"/>
+                <outlet property="playerViewBottomConstraint" destination="0Cz-Al-Bdi" id="nPS-z5-ebm"/>
                 <outlet property="portraitControlPannel" destination="Dy4-IW-yGY" id="6z2-ka-mGZ"/>
                 <outlet property="recommendTableView" destination="Qda-S2-ecw" id="LPw-fc-IWd"/>
                 <outlet property="tableViewHeightConstraint" destination="4Ek-7t-13U" id="vob-ki-rEm"/>
@@ -131,7 +132,7 @@
                     </subviews>
                     <gestureRecognizers/>
                     <constraints>
-                        <constraint firstAttribute="width" secondItem="cCh-Gd-zT6" secondAttribute="height" multiplier="16:9" id="74A-Hu-Y1F"/>
+                        <constraint firstAttribute="width" secondItem="cCh-Gd-zT6" secondAttribute="height" multiplier="16:9" priority="750" id="74A-Hu-Y1F"/>
                         <constraint firstAttribute="trailing" secondItem="Dy4-IW-yGY" secondAttribute="trailing" id="AYN-lC-t4L"/>
                         <constraint firstItem="Dy4-IW-yGY" firstAttribute="top" secondItem="cCh-Gd-zT6" secondAttribute="top" id="Kod-Jo-QKP"/>
                         <constraint firstAttribute="bottom" secondItem="Dy4-IW-yGY" secondAttribute="bottom" id="M0o-ND-NJL"/>
@@ -330,6 +331,7 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="bk-origin"/>
             <constraints>
+                <constraint firstItem="FGU-aY-7wX" firstAttribute="bottom" secondItem="cCh-Gd-zT6" secondAttribute="bottom" id="0Cz-Al-Bdi"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cCh-Gd-zT6" secondAttribute="trailing" id="9xt-xC-grJ"/>
                 <constraint firstItem="cCh-Gd-zT6" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Ahn-H4-JnM"/>
                 <constraint firstItem="cCh-Gd-zT6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="LfN-bb-5jA"/>
@@ -338,6 +340,11 @@
                 <constraint firstItem="FGU-aY-7wX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="cu9-Rq-0ZQ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="FGU-aY-7wX" secondAttribute="trailing" id="lj2-MJ-Igw"/>
             </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="0Cz-Al-Bdi"/>
+                </mask>
+            </variation>
             <point key="canvasLocation" x="140" y="21"/>
         </view>
         <tapGestureRecognizer id="8ak-DS-h2I">
