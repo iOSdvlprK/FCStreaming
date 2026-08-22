@@ -34,11 +34,15 @@ class SeekbarView: UIView {
     
     func setTotalPlayTime(_ totalPlayTime: Double) {
         self.totalPlayTime = totalPlayTime
+        
+        self.update()
     }
     
     func setPlayTime(_ playTime: Double, playableTime: Double) {
         self.currentPlayTime = playTime
         self.playableTime = playableTime
+        
+        self.update()
     }
     
     private func update() {

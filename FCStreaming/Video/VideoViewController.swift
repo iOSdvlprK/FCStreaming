@@ -25,6 +25,8 @@ class VideoViewController: UIViewController {
     @IBOutlet weak var landscapeTitleLabel: UILabel!
     @IBOutlet weak var playerView: PlayerView!
     @IBOutlet var playerViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var seekbar: SeekbarView!
+    @IBOutlet weak var landscapePlayTimeLabel: UILabel!
     
     private static let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -61,6 +63,7 @@ class VideoViewController: UIViewController {
         super.viewDidLoad()
 
         self.playerView.delegate = self
+        self.seekbar.delegate = self
         self.channelThumnailImageView.layer.cornerRadius = 14
         self.setupRecommendTableView()
         self.bindViewModel()
@@ -157,15 +160,36 @@ extension VideoViewController {
 
 extension VideoViewController: PlayerViewDelegate {
     func playerViewReadyToPlay(_ playerView: PlayerView) {
+        self.seekbar.setTotalPlayTime(self.playerView.totalPlayTime)
         self.updatePlayButton(isPlaying: playerView.isPlaying)
+        self.updatePlayTime(0, totalPlayTime: playerView.totalPlayTime)
     }
     
     func playerView(_ playerView: PlayerView, didPlay playTime: Double, playableTime: Double) {
+        self.seekbar.setPlayTime(playTime, playableTime: playableTime)
+        self.updatePlayTime(playTime, totalPlayTime: playerView.totalPlayTime)
     }
     
     func playerViewDidFinishToPlay(_ playerView: PlayerView) {
         self.playerView.seek(to: 0)
         self.updatePlayButton(isPlaying: false)
+    }
+    
+    private func updatePlayTime(_ playTime: Double, totalPlayTime: Double) {
+        guard let playTimeText = DateComponentsFormatter.playTimeFormatter.string(from: playTime),
+              let totalPlayTimeText = DateComponentsFormatter.playTimeFormatter.string(from: totalPlayTime)
+        else {
+            self.landscapePlayTimeLabel.text = nil
+            return
+        }
+        
+        self.landscapePlayTimeLabel.text = "\(playTimeText) / \(totalPlayTimeText)"
+    }
+}
+
+extension VideoViewController: SeekBarViewDelegate {
+    func seekbar(_ seekbar: SeekbarView, seekToPercent percent: Double) {
+        self.playerView.seek(to: percent)
     }
 }
 

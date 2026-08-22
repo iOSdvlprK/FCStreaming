@@ -15,6 +15,7 @@
                 <outlet property="favoriteButton" destination="jdY-Rd-7du" id="Beb-au-xS1"/>
                 <outlet property="landscapeControlPannel" destination="Iep-0t-e3q" id="duZ-1W-B0S"/>
                 <outlet property="landscapePlayButton" destination="poz-jP-2XC" id="lru-Uw-0lQ"/>
+                <outlet property="landscapePlayTimeLabel" destination="UiD-DI-VmC" id="HJ5-Cw-hlV"/>
                 <outlet property="landscapeTitleLabel" destination="2JD-nm-VTY" id="ANN-LW-gMF"/>
                 <outlet property="playButton" destination="taa-Gm-l0M" id="ADZ-jd-W6t"/>
                 <outlet property="playCountLabel" destination="yaz-yR-Ryk" id="HtA-X2-7Eu"/>
@@ -22,6 +23,7 @@
                 <outlet property="playerViewBottomConstraint" destination="0Cz-Al-Bdi" id="nPS-z5-ebm"/>
                 <outlet property="portraitControlPannel" destination="Dy4-IW-yGY" id="6z2-ka-mGZ"/>
                 <outlet property="recommendTableView" destination="Qda-S2-ecw" id="LPw-fc-IWd"/>
+                <outlet property="seekbar" destination="JMA-eN-1ZH" id="XT4-Cd-PK6"/>
                 <outlet property="tableViewHeightConstraint" destination="4Ek-7t-13U" id="vob-ki-rEm"/>
                 <outlet property="titleLabel" destination="d3A-ut-K0g" id="06J-K7-NDD"/>
                 <outlet property="updateDateLabel" destination="RdY-dD-r9q" id="Kka-rO-URI"/>
