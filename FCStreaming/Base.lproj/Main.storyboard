@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24743"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -53,17 +54,122 @@
             </objects>
             <point key="canvasLocation" x="-280" y="121"/>
         </scene>
-        <!--View Controller-->
+        <!--Live View Controller-->
         <scene sceneID="wbc-Mb-KSF">
             <objects>
-                <viewController id="huL-Cb-TmK" sceneMemberID="viewController">
+                <viewController id="huL-Cb-TmK" customClass="LiveViewController" customModule="FCStreaming" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mPX-oA-p12">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="라이브 채널" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v9h-Dv-AVP">
+                                <rect key="frame" x="30" y="138" width="333" height="22"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" name="main-wh"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PPT-BW-eNa">
+                                <rect key="frame" x="16" y="205" width="361" height="494"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="by9-LT-EIA">
+                                        <rect key="frame" x="14" y="23" width="333" height="22"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ea9-70-aNK">
+                                                <rect key="frame" x="268" y="0.0" width="65" height="22"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="방송 시작순">
+                                                    <color key="titleColor" name="gray-2"/>
+                                                </state>
+                                                <state key="selected">
+                                                    <color key="titleColor" name="main-wh"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="sortDidTap:" destination="huL-Cb-TmK" eventType="touchUpInside" id="eP6-hd-8mF"/>
+                                                </connections>
+                                            </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TDi-aV-HSu">
+                                                <rect key="frame" x="264" y="6" width="1" height="11"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="tintColor" name="gray-2"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="1" id="age-Jy-s4R"/>
+                                                </constraints>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fkZ-gd-dvV">
+                                                <rect key="frame" x="224" y="0.0" width="37" height="22"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="인기순">
+                                                    <color key="titleColor" name="gray-2"/>
+                                                </state>
+                                                <state key="selected">
+                                                    <color key="titleColor" name="main-wh"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="sortDidTap:" destination="huL-Cb-TmK" eventType="touchUpInside" id="9A5-vC-c4N"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="fkZ-gd-dvV" firstAttribute="top" secondItem="by9-LT-EIA" secondAttribute="top" id="2y5-3Z-qSQ"/>
+                                            <constraint firstAttribute="bottom" secondItem="fkZ-gd-dvV" secondAttribute="bottom" id="C57-DY-rEE"/>
+                                            <constraint firstItem="TDi-aV-HSu" firstAttribute="top" secondItem="by9-LT-EIA" secondAttribute="top" constant="6" id="SMI-Nv-OZe"/>
+                                            <constraint firstItem="Ea9-70-aNK" firstAttribute="leading" secondItem="TDi-aV-HSu" secondAttribute="trailing" constant="3" id="acf-iv-zxT"/>
+                                            <constraint firstItem="Ea9-70-aNK" firstAttribute="top" secondItem="by9-LT-EIA" secondAttribute="top" id="i0z-Yy-iX8"/>
+                                            <constraint firstAttribute="height" constant="22" id="jtm-g4-Ncd"/>
+                                            <constraint firstAttribute="trailing" secondItem="Ea9-70-aNK" secondAttribute="trailing" id="jzu-5I-XXK"/>
+                                            <constraint firstItem="TDi-aV-HSu" firstAttribute="leading" secondItem="fkZ-gd-dvV" secondAttribute="trailing" constant="3" id="kL2-1l-wCs"/>
+                                            <constraint firstItem="fkZ-gd-dvV" firstAttribute="leading" relation="lessThanOrEqual" secondItem="by9-LT-EIA" secondAttribute="leading" constant="224" id="tKR-l4-VQM"/>
+                                            <constraint firstAttribute="bottom" secondItem="Ea9-70-aNK" secondAttribute="bottom" id="v9I-aP-fjN"/>
+                                            <constraint firstAttribute="bottom" secondItem="TDi-aV-HSu" secondAttribute="bottom" constant="5" id="xaU-vZ-iFS"/>
+                                        </constraints>
+                                    </view>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0ib-Yw-0gb">
+                                        <rect key="frame" x="14" y="78" width="333" height="397"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="71l-Po-NfS">
+                                            <size key="itemSize" width="128" height="128"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells/>
+                                    </collectionView>
+                                </subviews>
+                                <color key="backgroundColor" name="bk-origin"/>
+                                <constraints>
+                                    <constraint firstItem="by9-LT-EIA" firstAttribute="leading" secondItem="PPT-BW-eNa" secondAttribute="leading" constant="14" id="5tK-MI-A9s"/>
+                                    <constraint firstAttribute="bottom" secondItem="0ib-Yw-0gb" secondAttribute="bottom" constant="19" id="CYK-77-7fo"/>
+                                    <constraint firstAttribute="trailing" secondItem="by9-LT-EIA" secondAttribute="trailing" constant="14" id="QoS-3K-UH6"/>
+                                    <constraint firstAttribute="trailing" secondItem="0ib-Yw-0gb" secondAttribute="trailing" constant="14" id="oKw-Uf-4bW"/>
+                                    <constraint firstItem="by9-LT-EIA" firstAttribute="top" secondItem="PPT-BW-eNa" secondAttribute="top" constant="23" id="q3M-Tn-VfW"/>
+                                    <constraint firstItem="0ib-Yw-0gb" firstAttribute="top" secondItem="by9-LT-EIA" secondAttribute="bottom" constant="33" id="rWh-tf-jax"/>
+                                    <constraint firstItem="0ib-Yw-0gb" firstAttribute="leading" secondItem="PPT-BW-eNa" secondAttribute="leading" constant="14" id="wwk-aQ-b2j"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Dxg-VJ-FA8"/>
                         <color key="backgroundColor" name="bg"/>
+                        <constraints>
+                            <constraint firstItem="v9h-Dv-AVP" firstAttribute="top" secondItem="Dxg-VJ-FA8" secondAttribute="top" constant="20" id="6Og-2h-CyI"/>
+                            <constraint firstItem="Dxg-VJ-FA8" firstAttribute="trailing" secondItem="v9h-Dv-AVP" secondAttribute="trailing" constant="30" id="Be3-Tk-XUl"/>
+                            <constraint firstItem="v9h-Dv-AVP" firstAttribute="leading" secondItem="Dxg-VJ-FA8" secondAttribute="leading" constant="30" id="Dpu-iT-gRA"/>
+                            <constraint firstItem="PPT-BW-eNa" firstAttribute="leading" secondItem="Dxg-VJ-FA8" secondAttribute="leading" constant="16" id="R7C-ac-Qe1"/>
+                            <constraint firstItem="PPT-BW-eNa" firstAttribute="top" secondItem="v9h-Dv-AVP" secondAttribute="bottom" constant="45" id="W7J-e3-W8z"/>
+                            <constraint firstItem="Dxg-VJ-FA8" firstAttribute="bottom" secondItem="PPT-BW-eNa" secondAttribute="bottom" constant="36" id="a4L-zO-WFC"/>
+                            <constraint firstItem="Dxg-VJ-FA8" firstAttribute="trailing" secondItem="PPT-BW-eNa" secondAttribute="trailing" constant="16" id="kx8-bn-JtT"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="tabIcon_live" selectedImage="tabIcon_live_selected" id="JGn-kx-XGD"/>
+                    <connections>
+                        <outlet property="collectionView" destination="0ib-Yw-0gb" id="Y1X-cR-gZS"/>
+                        <outlet property="containerView" destination="PPT-BW-eNa" id="wYa-PD-N8L"/>
+                        <outlet property="favoriteButton" destination="fkZ-gd-dvV" id="nqI-Vq-6ca"/>
+                        <outlet property="startTimeButton" destination="Ea9-70-aNK" id="CS2-8E-IH9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fnq-1J-5wf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -347,6 +453,12 @@
         <namedColor name="bg">
             <color red="0.10588235294117647" green="0.10588235294117647" blue="0.10588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="bk-origin">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="gray-2">
+            <color red="0.65490196078431373" green="0.65490196078431373" blue="0.65490196078431373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="icon-on">
             <color red="0.36862745098039218" green="0.36862745098039218" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -362,5 +474,8 @@
         <namedColor name="stroke-light">
             <color red="0.34509803921568627" green="0.34509803921568627" blue="0.34509803921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
