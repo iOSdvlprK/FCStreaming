@@ -17,6 +17,8 @@ class LiveViewController: UIViewController {
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask { .portrait }
     override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
     
+    private let viewModel = LiveViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,15 +27,29 @@ class LiveViewController: UIViewController {
         self.containerView.layer.borderWidth = 1
         
         self.setupCollectionView()
+        self.bindViewModel()
+        
+        self.viewModel.request(sort: .favorite)
+    }
+    
+    private func bindViewModel() {
+        self.viewModel.dataChanged = { [weak self] _ in
+            self?.collectionView.reloadData()
+            self?.collectionView.setContentOffset(.zero, animated: true)
+        }
     }
     
     @IBAction func sortDidTap(_ sender: UIButton) {
-        guard sender.isSelected == false else {
-            return
-        }
+        guard sender.isSelected == false else { return }
         
         self.favoriteButton.isSelected = sender == self.favoriteButton
         self.startTimeButton.isSelected = sender == self.startTimeButton
+        
+        if self.favoriteButton.isSelected {
+            self.viewModel.request(sort: .favorite)
+        } else {
+            self.viewModel.request(sort: .start)
+        }
     }
     
     private func setupCollectionView() {
@@ -54,11 +70,16 @@ extension LiveViewController: UICollectionViewDelegateFlowLayout {
 
 extension LiveViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        10
+        self.viewModel.items?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LiveCell.identifier, for: indexPath)
+        
+        if let cell = cell as? LiveCell,
+           let data = self.viewModel.items?[indexPath.item] {
+           cell.setData(data)
+       }
         
         return cell
     }
