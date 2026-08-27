@@ -471,16 +471,93 @@
                     <viewLayoutGuide key="contentLayoutGuide" id="sJM-VF-fa3"/>
                     <viewLayoutGuide key="frameLayoutGuide" id="vS6-W4-QGD"/>
                 </scrollView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sCt-GP-s1B">
+                    <rect key="frame" x="0.0" y="339" width="393" height="445"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wak-iM-n42">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="67"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="라이브 채팅" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eoo-Xw-oAT">
+                                    <rect key="frame" x="30" y="23" width="78" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                    <color key="textColor" name="main-wh"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a42-MB-WXP">
+                                    <rect key="frame" x="323" y="13.666666666666686" width="40" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="40" id="LyL-Q3-EXz"/>
+                                        <constraint firstAttribute="height" constant="40" id="huk-vJ-CRL"/>
+                                    </constraints>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" image="small_close"/>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="a42-MB-WXP" secondAttribute="trailing" constant="30" id="9QD-OP-TtK"/>
+                                <constraint firstAttribute="height" constant="67" id="9t2-FT-jYS"/>
+                                <constraint firstItem="a42-MB-WXP" firstAttribute="centerY" secondItem="wak-iM-n42" secondAttribute="centerY" id="d9F-Di-H8w"/>
+                                <constraint firstItem="eoo-Xw-oAT" firstAttribute="centerY" secondItem="wak-iM-n42" secondAttribute="centerY" id="sho-Yy-KLk"/>
+                                <constraint firstItem="eoo-Xw-oAT" firstAttribute="leading" secondItem="wak-iM-n42" secondAttribute="leading" constant="30" id="vOX-bs-zNe"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zix-vc-rHH">
+                            <rect key="frame" x="0.0" y="365" width="393" height="80"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gRM-sg-Llg">
+                                    <rect key="frame" x="25" y="7" width="343" height="34"/>
+                                    <color key="backgroundColor" name="chat-bg"/>
+                                    <color key="textColor" name="chat-text"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="gRM-sg-Llg" firstAttribute="top" secondItem="zix-vc-rHH" secondAttribute="top" constant="7" id="6xa-aU-Hd3"/>
+                                <constraint firstItem="gRM-sg-Llg" firstAttribute="leading" secondItem="zix-vc-rHH" secondAttribute="leading" constant="25" id="liH-Bf-I2y"/>
+                                <constraint firstAttribute="height" constant="80" id="rra-Ig-aaN"/>
+                                <constraint firstAttribute="trailing" secondItem="gRM-sg-Llg" secondAttribute="trailing" constant="25" id="xWs-wM-3KQ"/>
+                            </constraints>
+                        </view>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ts7-Rm-9gO">
+                            <rect key="frame" x="0.0" y="67" width="393" height="298"/>
+                            <color key="backgroundColor" name="bk-origin"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rjb-5v-dpo">
+                                <size key="itemSize" width="128" height="128"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
+                    </subviews>
+                    <color key="backgroundColor" name="bk-origin"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="wak-iM-n42" secondAttribute="trailing" id="CrI-bu-RSA"/>
+                        <constraint firstItem="ts7-Rm-9gO" firstAttribute="leading" secondItem="sCt-GP-s1B" secondAttribute="leading" id="HWo-NR-aKs"/>
+                        <constraint firstItem="zix-vc-rHH" firstAttribute="leading" secondItem="sCt-GP-s1B" secondAttribute="leading" id="QNi-G9-MRQ"/>
+                        <constraint firstItem="zix-vc-rHH" firstAttribute="top" secondItem="ts7-Rm-9gO" secondAttribute="bottom" id="Yb5-0t-ZUN"/>
+                        <constraint firstAttribute="bottom" secondItem="zix-vc-rHH" secondAttribute="bottom" id="gEA-Z5-CnS"/>
+                        <constraint firstItem="wak-iM-n42" firstAttribute="top" secondItem="sCt-GP-s1B" secondAttribute="top" id="gbO-x6-94K"/>
+                        <constraint firstAttribute="trailing" secondItem="zix-vc-rHH" secondAttribute="trailing" id="iLN-qg-qHu"/>
+                        <constraint firstAttribute="trailing" secondItem="ts7-Rm-9gO" secondAttribute="trailing" id="kCB-ba-85M"/>
+                        <constraint firstItem="ts7-Rm-9gO" firstAttribute="top" secondItem="wak-iM-n42" secondAttribute="bottom" id="pZE-hY-boe"/>
+                        <constraint firstItem="wak-iM-n42" firstAttribute="leading" secondItem="sCt-GP-s1B" secondAttribute="leading" id="sfD-Je-ocJ"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="bk-origin"/>
             <constraints>
                 <constraint firstItem="FGU-aY-7wX" firstAttribute="bottom" secondItem="cCh-Gd-zT6" secondAttribute="bottom" id="0Cz-Al-Bdi"/>
+                <constraint firstItem="sCt-GP-s1B" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="5kc-uh-bR3"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cCh-Gd-zT6" secondAttribute="trailing" id="9xt-xC-grJ"/>
                 <constraint firstItem="cCh-Gd-zT6" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Ahn-H4-JnM"/>
+                <constraint firstItem="sCt-GP-s1B" firstAttribute="top" secondItem="cCh-Gd-zT6" secondAttribute="bottom" id="Bi5-gB-OZH"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="sCt-GP-s1B" secondAttribute="bottom" id="FET-8u-ewQ"/>
                 <constraint firstItem="cCh-Gd-zT6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="LfN-bb-5jA"/>
                 <constraint firstAttribute="bottom" secondItem="FGU-aY-7wX" secondAttribute="bottom" id="RKE-rO-1mz"/>
                 <constraint firstItem="FGU-aY-7wX" firstAttribute="top" secondItem="cCh-Gd-zT6" secondAttribute="bottom" id="YKS-42-Vj0"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="sCt-GP-s1B" secondAttribute="trailing" id="ZYH-TC-G3Q"/>
                 <constraint firstItem="FGU-aY-7wX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="cu9-Rq-0ZQ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="FGU-aY-7wX" secondAttribute="trailing" id="lj2-MJ-Igw"/>
             </constraints>
@@ -518,6 +595,12 @@
         </namedColor>
         <namedColor name="bk-origin">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="chat-bg">
+            <color red="0.19215686274509805" green="0.19215686274509805" blue="0.19215686274509805" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="chat-text">
+            <color red="0.59607843137254901" green="0.59607843137254901" blue="0.59607843137254901" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="d-text-deep">
             <color red="0.18823529411764706" green="0.18823529411764706" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
