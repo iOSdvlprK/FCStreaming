@@ -27,6 +27,9 @@ class VideoViewController: UIViewController {
     @IBOutlet var playerViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var seekbar: SeekbarView!
     @IBOutlet weak var landscapePlayTimeLabel: UILabel!
+    @IBOutlet weak var chattingView: ChattingView!
+    @IBOutlet weak var chattingViewBottomConstraint: NSLayoutConstraint!
+    var isLiveMode: Bool = false
     
     private static let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -64,10 +67,12 @@ class VideoViewController: UIViewController {
 
         self.playerView.delegate = self
         self.seekbar.delegate = self
+        self.chattingView.delegate = self
         self.channelThumnailImageView.layer.cornerRadius = 14
         self.setupRecommendTableView()
         self.bindViewModel()
         self.viewModel.request()
+        self.chattingView.isHidden = !self.isLiveMode
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -101,6 +106,9 @@ class VideoViewController: UIViewController {
     }
 
     @IBAction func commentDidTap(_ sender: Any) {
+        if self.isLiveMode {
+            self.chattingView.isHidden = false
+        }
     }
 }
 
@@ -204,6 +212,12 @@ extension VideoViewController: PlayerViewDelegate {
 extension VideoViewController: SeekBarViewDelegate {
     func seekbar(_ seekbar: SeekbarView, seekToPercent percent: Double) {
         self.playerView.seek(to: percent)
+    }
+}
+
+extension VideoViewController: ChattingViewDelegate {
+    func liveChattingViewClassDidTap(_ chattingView: ChattingView) {
+        self.chattingView.isHidden = true
     }
 }
 

@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="channelNameLabel" destination="1mb-o1-EyW" id="SSA-cq-Mtw"/>
                 <outlet property="channelThumnailImageView" destination="Xn9-Tq-1sh" id="Ksa-U9-i8Q"/>
+                <outlet property="chattingView" destination="sCt-GP-s1B" id="JXa-ye-KNP"/>
                 <outlet property="favoriteButton" destination="jdY-Rd-7du" id="Beb-au-xS1"/>
                 <outlet property="landscapeControlPannel" destination="Iep-0t-e3q" id="duZ-1W-B0S"/>
                 <outlet property="landscapePlayButton" destination="poz-jP-2XC" id="lru-Uw-0lQ"/>
@@ -471,8 +472,8 @@
                     <viewLayoutGuide key="contentLayoutGuide" id="sJM-VF-fa3"/>
                     <viewLayoutGuide key="frameLayoutGuide" id="vS6-W4-QGD"/>
                 </scrollView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sCt-GP-s1B">
-                    <rect key="frame" x="0.0" y="339" width="393" height="445"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sCt-GP-s1B" customClass="ChattingView" customModule="FCStreaming" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="339" width="393" height="513"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wak-iM-n42">
                             <rect key="frame" x="0.0" y="0.0" width="393" height="67"/>
@@ -491,6 +492,9 @@
                                     </constraints>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                     <state key="normal" image="small_close"/>
+                                    <connections>
+                                        <action selector="closeDidTap:" destination="sCt-GP-s1B" eventType="touchUpInside" id="fmD-fE-EbW"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <constraints>
@@ -530,19 +534,24 @@
                             </collectionViewFlowLayout>
                         </collectionView>
                     </subviews>
+                    <viewLayoutGuide key="safeArea" id="VX4-wY-yiU"/>
                     <color key="backgroundColor" name="bk-origin"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="wak-iM-n42" secondAttribute="trailing" id="CrI-bu-RSA"/>
                         <constraint firstItem="ts7-Rm-9gO" firstAttribute="leading" secondItem="sCt-GP-s1B" secondAttribute="leading" id="HWo-NR-aKs"/>
                         <constraint firstItem="zix-vc-rHH" firstAttribute="leading" secondItem="sCt-GP-s1B" secondAttribute="leading" id="QNi-G9-MRQ"/>
                         <constraint firstItem="zix-vc-rHH" firstAttribute="top" secondItem="ts7-Rm-9gO" secondAttribute="bottom" id="Yb5-0t-ZUN"/>
-                        <constraint firstAttribute="bottom" secondItem="zix-vc-rHH" secondAttribute="bottom" id="gEA-Z5-CnS"/>
+                        <constraint firstItem="VX4-wY-yiU" firstAttribute="bottom" secondItem="zix-vc-rHH" secondAttribute="bottom" id="gEA-Z5-CnS"/>
                         <constraint firstItem="wak-iM-n42" firstAttribute="top" secondItem="sCt-GP-s1B" secondAttribute="top" id="gbO-x6-94K"/>
                         <constraint firstAttribute="trailing" secondItem="zix-vc-rHH" secondAttribute="trailing" id="iLN-qg-qHu"/>
                         <constraint firstAttribute="trailing" secondItem="ts7-Rm-9gO" secondAttribute="trailing" id="kCB-ba-85M"/>
                         <constraint firstItem="ts7-Rm-9gO" firstAttribute="top" secondItem="wak-iM-n42" secondAttribute="bottom" id="pZE-hY-boe"/>
                         <constraint firstItem="wak-iM-n42" firstAttribute="leading" secondItem="sCt-GP-s1B" secondAttribute="leading" id="sfD-Je-ocJ"/>
                     </constraints>
+                    <connections>
+                        <outlet property="collectionView" destination="ts7-Rm-9gO" id="zGd-sj-gtw"/>
+                        <outlet property="textField" destination="gRM-sg-Llg" id="5YH-7i-Rga"/>
+                    </connections>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
@@ -553,7 +562,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cCh-Gd-zT6" secondAttribute="trailing" id="9xt-xC-grJ"/>
                 <constraint firstItem="cCh-Gd-zT6" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Ahn-H4-JnM"/>
                 <constraint firstItem="sCt-GP-s1B" firstAttribute="top" secondItem="cCh-Gd-zT6" secondAttribute="bottom" id="Bi5-gB-OZH"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="sCt-GP-s1B" secondAttribute="bottom" id="FET-8u-ewQ"/>
+                <constraint firstAttribute="bottom" secondItem="sCt-GP-s1B" secondAttribute="bottom" id="FET-8u-ewQ"/>
                 <constraint firstItem="cCh-Gd-zT6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="LfN-bb-5jA"/>
                 <constraint firstAttribute="bottom" secondItem="FGU-aY-7wX" secondAttribute="bottom" id="RKE-rO-1mz"/>
                 <constraint firstItem="FGU-aY-7wX" firstAttribute="top" secondItem="cCh-Gd-zT6" secondAttribute="bottom" id="YKS-42-Vj0"/>
