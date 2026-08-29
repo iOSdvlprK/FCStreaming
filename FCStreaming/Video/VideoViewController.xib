@@ -13,6 +13,7 @@
                 <outlet property="channelNameLabel" destination="1mb-o1-EyW" id="SSA-cq-Mtw"/>
                 <outlet property="channelThumnailImageView" destination="Xn9-Tq-1sh" id="Ksa-U9-i8Q"/>
                 <outlet property="chattingView" destination="sCt-GP-s1B" id="JXa-ye-KNP"/>
+                <outlet property="chattingViewBottomConstraint" destination="FET-8u-ewQ" id="Xkd-Bj-ZAY"/>
                 <outlet property="favoriteButton" destination="jdY-Rd-7du" id="Beb-au-xS1"/>
                 <outlet property="landscapeControlPannel" destination="Iep-0t-e3q" id="duZ-1W-B0S"/>
                 <outlet property="landscapePlayButton" destination="poz-jP-2XC" id="lru-Uw-0lQ"/>
@@ -535,13 +536,16 @@
                         </collectionView>
                     </subviews>
                     <viewLayoutGuide key="safeArea" id="VX4-wY-yiU"/>
+                    <keyboardLayoutGuide key="keyboard" id="VQh-NS-jcP"/>
                     <color key="backgroundColor" name="bk-origin"/>
+                    <gestureRecognizers/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="wak-iM-n42" secondAttribute="trailing" id="CrI-bu-RSA"/>
+                        <constraint firstItem="VQh-NS-jcP" firstAttribute="top" secondItem="zix-vc-rHH" secondAttribute="bottom" priority="750" id="EdE-Um-uO3"/>
                         <constraint firstItem="ts7-Rm-9gO" firstAttribute="leading" secondItem="sCt-GP-s1B" secondAttribute="leading" id="HWo-NR-aKs"/>
                         <constraint firstItem="zix-vc-rHH" firstAttribute="leading" secondItem="sCt-GP-s1B" secondAttribute="leading" id="QNi-G9-MRQ"/>
                         <constraint firstItem="zix-vc-rHH" firstAttribute="top" secondItem="ts7-Rm-9gO" secondAttribute="bottom" id="Yb5-0t-ZUN"/>
-                        <constraint firstItem="VX4-wY-yiU" firstAttribute="bottom" secondItem="zix-vc-rHH" secondAttribute="bottom" id="gEA-Z5-CnS"/>
+                        <constraint firstItem="VX4-wY-yiU" firstAttribute="bottom" secondItem="zix-vc-rHH" secondAttribute="bottom" priority="700" id="gEA-Z5-CnS"/>
                         <constraint firstItem="wak-iM-n42" firstAttribute="top" secondItem="sCt-GP-s1B" secondAttribute="top" id="gbO-x6-94K"/>
                         <constraint firstAttribute="trailing" secondItem="zix-vc-rHH" secondAttribute="trailing" id="iLN-qg-qHu"/>
                         <constraint firstAttribute="trailing" secondItem="ts7-Rm-9gO" secondAttribute="trailing" id="kCB-ba-85M"/>
@@ -551,6 +555,7 @@
                     <connections>
                         <outlet property="collectionView" destination="ts7-Rm-9gO" id="zGd-sj-gtw"/>
                         <outlet property="textField" destination="gRM-sg-Llg" id="5YH-7i-Rga"/>
+                        <outletCollection property="gestureRecognizers" destination="Qk0-9Q-SKr" appends="YES" id="63J-ke-g4x"/>
                     </connections>
                 </view>
             </subviews>
@@ -580,6 +585,11 @@
         <tapGestureRecognizer id="8ak-DS-h2I">
             <connections>
                 <action selector="toggleControlPannel:" destination="-1" id="4bq-Pl-c4C"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="Qk0-9Q-SKr">
+            <connections>
+                <action selector="dismissKeyboard:" destination="sCt-GP-s1B" id="GfW-u9-QeE"/>
             </connections>
         </tapGestureRecognizer>
     </objects>

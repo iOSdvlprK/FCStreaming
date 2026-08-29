@@ -8,7 +8,7 @@
 import UIKit
 
 protocol ChattingViewDelegate: AnyObject {
-    func liveChattingViewClassDidTap(_ chattingView: ChattingView)
+    func liveChattingViewCloseDidTap(_ chattingView: ChattingView)
 }
 
 class ChattingView: UIView {
@@ -35,7 +35,7 @@ class ChattingView: UIView {
     
     @IBAction func closeDidTap(_ sender: Any) {
         self.textField.resignFirstResponder()
-        self.delegate?.liveChattingViewClassDidTap(self)
+        self.delegate?.liveChattingViewCloseDidTap(self)
     }
     
     @IBAction func dismissKeyboard(_ sender: Any) {

@@ -8,6 +8,7 @@
 import UIKit
 
 class VideoViewController: UIViewController {
+    private let chattingLandscapeConstraint: CGFloat = -500
     @IBOutlet weak var playButton: UIButton!
     
     @IBOutlet weak var titleLabel: UILabel!
@@ -79,6 +80,18 @@ class VideoViewController: UIViewController {
         
         self.switchControlPannel(size: size)
         self.playerViewBottomConstraint.isActive = self.isLandscape(size: size)
+        
+        self.chattingView.textField.resignFirstResponder()
+        if self.isLandscape(size: size) {
+            self.chattingViewBottomConstraint.constant = self.chattingLandscapeConstraint
+        } else {
+            self.chattingViewBottomConstraint.constant = 0
+        }
+        
+        coordinator.animate { _ in
+            self.chattingView.collectionView.collectionViewLayout.invalidateLayout()
+        }
+        
         super.viewWillTransition(to: size, with: coordinator)
     }
     
@@ -216,7 +229,7 @@ extension VideoViewController: SeekBarViewDelegate {
 }
 
 extension VideoViewController: ChattingViewDelegate {
-    func liveChattingViewClassDidTap(_ chattingView: ChattingView) {
+    func liveChattingViewCloseDidTap(_ chattingView: ChattingView) {
         self.chattingView.isHidden = true
     }
 }
